@@ -1,0 +1,356 @@
+// Booking Deal Dashboard Styles
+@import "../variables_common";
+
+.booking-deal-dashboard {
+    // Base card styles
+    .card {
+        height: 100%;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        transition: all 0.3s ease;
+        
+        &:hover {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+            padding: 1rem 1.25rem;
+            
+            h5 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #495057;
+            }
+        }
+        
+        .card-body {
+            padding: 1.25rem;
+        }
+    }
+    
+    // PAX Counter Styles
+    .pax-counter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        font-size: 2.5rem;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+        
+        &.pax-total {
+            background-color: #0d6efd;
+            color: white;
+        }
+        
+        &.pax-adults {
+            background-color: #0dcaf0;
+            color: white;
+        }
+        
+        &.pax-kids {
+            background-color: #ffc107;
+            color: #000;
+        }
+        
+        .count {
+            display: block;
+            line-height: 1;
+        }
+        
+        small {
+            font-size: 0.75rem;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+    }
+    
+    // Service Groups
+    .service-group {
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 0.375rem;
+        overflow: hidden;
+        
+        &-header {
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            transition: background-color 0.2s;
+            
+            &:hover {
+                background-color: #e9ecef;
+            }
+            
+            .badge {
+                float: right;
+                margin-top: 2px;
+            }
+        }
+        
+        &-body {
+            padding: 0;
+            
+            .table {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    // Financial Summary
+    .financial-summary {
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e9ecef;
+            
+            &:first-child {
+                padding-top: 0;
+            }
+            
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                font-weight: bold;
+                font-size: 1.1rem;
+                margin-top: 0.5rem;
+                padding-top: 1rem;
+                border-top: 2px solid #dee2e6;
+            }
+        }
+    }
+    
+    // Status Badges
+    .badge {
+        padding: 0.35em 0.65em;
+        font-weight: 500;
+        
+        &.badge-sm {
+            padding: 0.25em 0.5em;
+            font-size: 0.75rem;
+        }
+    }
+    
+    // Expandable Text
+    .expandable-text {
+        position: relative;
+        
+        .full-text {
+            display: none;
+        }
+        
+        a[data-toggle="expand"] {
+            text-decoration: none;
+            font-weight: 500;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    // Timeline Styles
+    .timeline {
+        position: relative;
+        padding-left: 35px;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e9ecef;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 25px;
+            
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -23px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 1px #e9ecef;
+            
+            &.bg-primary {
+                background-color: #0d6efd;
+            }
+            
+            &.bg-success {
+                background-color: #198754;
+            }
+            
+            &.bg-danger {
+                background-color: #dc3545;
+            }
+        }
+        
+        .timeline-content {
+            padding-left: 15px;
+            
+            h6 {
+                font-size: 0.95rem;
+                margin-bottom: 0.25rem;
+                font-weight: 600;
+            }
+            
+            p {
+                font-size: 0.875rem;
+                color: #6c757d;
+            }
+        }
+    }
+    
+    // Avatar Styles
+    .avatar-sm {
+        width: 48px;
+        height: 48px;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+    
+    // Responsive Design
+    @media (max-width: 991px) {
+        .pax-counter {
+            width: 70px;
+            height: 70px;
+            font-size: 2rem;
+            
+            small {
+                font-size: 0.7rem;
+            }
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .pax-counter {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+        }
+        
+        .financial-summary {
+            .summary-item {
+                font-size: 0.9rem;
+                
+                &:last-child {
+                    font-size: 1rem;
+                }
+            }
+        }
+        
+        .card-header {
+            .btn-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+                
+                .btn {
+                    padding: 0.25rem 0.5rem;
+                    font-size: 0.75rem;
+                }
+            }
+        }
+    }
+    
+    // Print Styles
+    @media print {
+        .card {
+            break-inside: avoid;
+            box-shadow: none !important;
+            border: 1px solid #dee2e6 !important;
+            
+            &:hover {
+                transform: none !important;
+            }
+        }
+        
+        .btn,
+        .btn-group,
+        .nav-tabs,
+        [data-action] {
+            display: none !important;
+        }
+        
+        .tab-content > .tab-pane {
+            display: block !important;
+            opacity: 1 !important;
+        }
+        
+        .col-lg-6 {
+            width: 50% !important;
+            float: left !important;
+        }
+        
+        .col-12 {
+            width: 100% !important;
+            clear: both;
+        }
+    }
+}
+
+// Dark mode support
+[data-theme="dark"] {
+    .booking-deal-dashboard {
+        .card {
+            background-color: #1a1d21;
+            border-color: #2c3034;
+            
+            .card-header {
+                background-color: #212529;
+                border-color: #2c3034;
+                
+                h5 {
+                    color: #e9ecef;
+                }
+            }
+        }
+        
+        .pax-counter {
+            &.pax-kids {
+                color: #212529;
+            }
+        }
+        
+        .timeline {
+            &::before {
+                background: #495057;
+            }
+            
+            .timeline-marker {
+                border-color: #1a1d21;
+                box-shadow: 0 0 0 1px #495057;
+            }
+        }
+        
+        .financial-summary {
+            .summary-item {
+                border-color: #495057;
+            }
+        }
+    }
+}
